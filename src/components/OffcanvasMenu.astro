@@ -1,0 +1,155 @@
+---
+interface Props {
+  logo?: string;
+}
+
+const { logo = "/assets/images/logo.png" } = Astro.props;
+---
+<!-- ==== offcanvas nav start ==== -->
+<div class="offcanvas-nav">
+   <div class="offcanvas-menu">
+      <nav class="offcanvas-menu__wrapper">
+         <div class="offcanvas-menu__header nav-fade">
+            <div class="logo">
+               <a href="/">
+                  <img src={logo} alt="Xpovio" title="Xpovio">
+               </a>
+            </div>
+            <a href="javascript:void(0)" aria-label="close offcanvas menu" class="close-offcanvas-menu">
+               <i class="fa-light fa-xmark-large"></i>
+            </a>
+         </div>
+         <div class="offcanvas-menu__list">
+            <div class="navbar__menu">
+               <ul>
+                  <li class="navbar__item navbar__item--has-children nav-fade">
+                     <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Home</a>
+                     <ul class="navbar__sub-menu">
+                        <li>
+                           <a href="/">Creative Agency</a>
+                        </li>
+                        <li>
+                           <a href="/index-light">Creative Agency Light</a>
+                        </li>
+                        <li>
+                           <a href="/index-two">Digital Agency</a>
+                        </li>
+                        <li>
+                           <a href="/index-two-light">Digital Agency Light</a>
+                        </li>
+                        <li>
+                           <a href="/index-three">It Solution</a>
+                        </li>
+                        <li>
+                           <a href="/index-three-light">It Solution Light</a>
+                        </li>
+                        <li>
+                           <a href="/index-four">Personal Portfolio</a>
+                        </li>
+                        <li>
+                           <a href="/index-four-light">Personal Portfolio Light</a>
+                        </li>
+                        <li>
+                           <a href="/index-five">Interactive Portfolio</a>
+                        </li>
+                        <li>
+                           <a href="/index-five-light">Interactive Portfolio Light</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="navbar__item nav-fade">
+                     <a href="/about-us">About Us</a>
+                  </li>
+                  <li class="navbar__item navbar__item--has-children nav-fade">
+                     <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Services</a>
+                     <ul class="navbar__sub-menu">
+                        <li>
+                           <a href="/our-services">Our Services</a>
+                        </li>
+                        <li>
+                           <a href="/service-single">Service Details</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="navbar__item navbar__item--has-children nav-fade">
+                     <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Projects</a>
+                     <ul class="navbar__sub-menu">
+                        <li>
+                           <a href="/our-projects">Our Projects</a>
+                        </li>
+                        <li>
+                           <a href="/project-single">Project Details</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="navbar__item navbar__item--has-children nav-fade">
+                     <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Pages</a>
+                     <ul class="navbar__sub-menu">
+                        <li>
+                           <a href="/faq">FAQ</a>
+                        </li>
+                        <li>
+                           <a href="/404">Error</a>
+                        </li>
+                        <li>
+                           <a href="/our-story">Our Story</a>
+                        </li>
+                        <li>
+                           <a href="/portfolio">Portfolio</a>
+                        </li>
+                        <li class="navbar__item navbar__item--has-children">
+                           <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
+                           <ul class="navbar__sub-menu navbar__sub-menu__nested">
+                              <li>
+                                 <a href="/our-teams">Our Teams</a>
+                              </li>
+                              <li>
+                                 <a href="/team-single">Team Details</a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <a href="/client-feedback">Testimonials</a>
+                        </li>
+                        <li>
+                           <a href="/contact-us">Contact Us</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="navbar__item navbar__item--has-children nav-fade">
+                     <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Blog</a>
+                     <ul class="navbar__sub-menu">
+                        <li>
+                           <a href="/blog">Blog</a>
+                        </li>
+                        <li>
+                           <a href="/blog-single">Blog Details</a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="offcanvas-menu__options nav-fade">
+            <div class="navbar__mobile-options">
+               <a href="/contact-us" class="btn btn--secondary">Let's Talk</a>
+            </div>
+         </div>
+         <div class="offcanvas-menu__social social nav-fade">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook">
+               <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com/" target="_blank" aria-label="share us on twitter">
+               <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank" aria-label="share us on pinterest">
+               <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="share us on instagram">
+               <i class="fa-brands fa-instagram"></i>
+            </a>
+         </div>
+      </nav>
+   </div>
+</div>
+<!-- ==== / offcanvas nav end ==== -->

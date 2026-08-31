@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Page Not Found - Xpovio";
+---
+
+<Layout
+  title={title}
+  headerVariant="cmn"
+  footerVariant="two"
+  bodyClass=""
+>
+<!--<< Breadcrumb Section Start >>-->
+                              
+<!-- ==== banner start ==== -->
+<section class="cmn-banner bg-img" style="background-image: url('assets/images/banner/cmn-banner-bg.png');">
+    <div class="container">
+        <div class="row gaper align-items-center">
+        <div class="col-12 col-lg-5 col-xl-7">
+            <div class="text-center text-lg-start">
+                <h2 class="title title-anim"><div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">E</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div></div></h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/">
+                            <i class="fa-solid fa-house"></i>
+                            Home                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                       Error                    </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- ==== / banner end ==== -->
+              
+               <!-- ==== error start ==== -->
+               <section class="section error fade-wrapper">
+                  <div class="container">
+                     <div class="row justify-content-center">
+                        <div class="col-12 col-xl-7">
+                           <div class="error__content text-center fade-top" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                              <span class="secondary-text">ERROR</span>
+                              <div class="thumb">
+                                 <img src="/assets/images/error-thumb.png" alt="Image">
+                              </div>
+                              <h2>page not found</h2>
+                              <div class="section__content-cta">
+                                 <a href="/" class="btn btn--secondary">back to home</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+               <!-- ==== / error end ==== -->
+</Layout>

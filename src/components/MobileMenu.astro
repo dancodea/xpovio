@@ -1,0 +1,40 @@
+---
+interface Props {
+  logo?: string;
+}
+
+const { logo = "/assets/images/logo.png" } = Astro.props;
+---
+<!-- ==== mobile menu start ==== -->
+<div class="mobile-menu">
+   <nav class="mobile-menu__wrapper">
+      <div class="mobile-menu__header nav-fade">
+         <div class="logo">
+            <a href="/">
+               <img src={logo} alt="Xpovio" title="Xpovio">
+            </a>
+         </div>
+         <a href="javascript:void(0)" aria-label="close mobile menu" class="close-mobile-menu">
+            <i class="fa-light fa-xmark-large"></i>
+         </a>
+      </div>
+      <div class="mobile-menu__list"></div>
+      <div class="mobile-menu__options nav-fade"></div>
+      <div class="mobile-menu__social social nav-fade">
+         <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+         </a>
+         <a href="https://www.twitter.com/" target="_blank" aria-label="share us on twitter">
+            <i class="fa-brands fa-twitter"></i>
+         </a>
+         <a href="https://www.pinterest.com/" target="_blank" aria-label="share us on pinterest">
+            <i class="fa-brands fa-linkedin-in"></i>
+         </a>
+         <a href="https://www.instagram.com/" target="_blank" aria-label="share us on instagram">
+            <i class="fa-brands fa-instagram"></i>
+         </a>
+      </div>
+   </nav>
+</div>
+<div class="mobile-menu__backdrop"></div>
+<!-- ==== / mobile menu end ==== -->

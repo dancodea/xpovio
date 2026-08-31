@@ -1,0 +1,289 @@
+---
+import MobileMenu from "./MobileMenu.astro";
+
+interface Props {
+  variant?: "secondary" | "cmn" | "tertiary" | "quaternary" | "quinary";
+  logo?: string;
+}
+
+const { variant = "cmn", logo = "/assets/images/logo.png" } = Astro.props;
+---
+<!-- ==== header start ==== -->
+<header class="header">
+  {variant === "secondary" && (
+    <div class="primary-navbar secondary--navbar">
+       <div class="container">
+          <div class="row">
+             <div class="col-12">
+                <nav class="navbar p-0">
+                   <div class="navbar__logo">
+                      <a href="/" aria-label="go to home">
+                         <img src={logo} alt="Xpovio">
+                      </a>
+                   </div>
+                   <div class="navbar__options">
+                      <button class="open-offcanvas-nav d-flex" aria-label="toggle mobile menu" title="open offcanvas menu"></button>
+                   </div>
+                </nav>
+             </div>
+          </div>
+       </div>
+    </div>
+  )}
+
+  {variant === "cmn" && (
+    <div class="primary-navbar cmn-nav">
+       <div class="container">
+          <div class="row">
+             <div class="col-12">
+                <nav class="navbar p-0">
+                   <div class="navbar__logo">
+                      <a href="/" aria-label="go to home">
+                         <img src={logo} alt="Xpovio">
+                      </a>
+                   </div>
+                   <div class="navbar__menu">
+                      <ul>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Home</a>
+                            <ul class="navbar__sub-menu navbar__sub-menu--lg">
+                               <li><a href="/">Creative Agency</a></li>
+                               <li><a href="/index-light">Creative Agency Light</a></li>
+                               <li><a href="/index-two">Digital Agency</a></li>
+                               <li><a href="/index-two-light">Digital Agency Light</a></li>
+                               <li><a href="/index-three">It Solution</a></li>
+                               <li><a href="/index-three-light">It Solution Light</a></li>
+                               <li><a href="/index-four">Personal Portfolio</a></li>
+                               <li><a href="/index-four-light">Personal Portfolio Light</a></li>
+                               <li><a href="/index-five">Interactive Portfolio</a></li>
+                               <li><a href="/index-five-light">Interactive Portfolio Light</a></li>
+                            </ul>
+                         </li>
+                         <li class="navbar__item nav-fade">
+                            <a href="/about-us">About Us</a>
+                         </li>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Services</a>
+                            <ul class="navbar__sub-menu">
+                               <li><a href="/our-services">Our Services</a></li>
+                               <li><a href="/service-single">Service Details</a></li>
+                            </ul>
+                         </li>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Projects</a>
+                            <ul class="navbar__sub-menu">
+                               <li><a href="/our-projects">Our Projects</a></li>
+                               <li><a href="/project-single">Project Details</a></li>
+                            </ul>
+                         </li>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Pages</a>
+                            <ul class="navbar__sub-menu">
+                               <li><a href="/faq">FAQ</a></li>
+                               <li><a href="/404">Error</a></li>
+                               <li><a href="/our-story">Our Story</a></li>
+                               <li><a href="/portfolio">Portfolio</a></li>
+                               <li class="navbar__item navbar__item--has-children">
+                                  <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
+                                  <ul class="navbar__sub-menu navbar__sub-menu__nested">
+                                     <li><a href="/our-teams">Our Teams</a></li>
+                                     <li><a href="/team-single">Team Details</a></li>
+                                  </ul>
+                               </li>
+                               <li><a href="/client-feedback">Testimonials</a></li>
+                               <li><a href="/contact-us">Contact Us</a></li>
+                            </ul>
+                         </li>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Blog</a>
+                            <ul class="navbar__sub-menu">
+                               <li><a href="/blog">Blog</a></li>
+                               <li><a href="/blog-single">Blog Details</a></li>
+                            </ul>
+                         </li>
+                      </ul>
+                   </div>
+                   <div class="navbar__options">
+                      <div class="navbar__mobile-options d-none d-sm-flex">
+                         <a href="/contact-us" class="btn btn--secondary">Let's Talk</a>
+                      </div>
+                      <button class="open-mobile-menu d-flex d-xl-none" aria-label="toggle mobile menu">
+                         <i class="fa-light fa-bars-staggered"></i>
+                      </button>
+                   </div>
+                </nav>
+             </div>
+          </div>
+       </div>
+       <MobileMenu logo={logo} />
+    </div>
+  )}
+
+  {variant === "tertiary" && (
+    <div class="primary-navbar tertiary--navbar">
+       <div class="container">
+          <div class="row">
+             <div class="col-12">
+                <nav class="navbar p-0">
+                   <div class="navbar__logo">
+                      <a href="/" aria-label="go to home">
+                         <img src={logo} alt="Xpovio">
+                      </a>
+                   </div>
+                   <div class="navbar__menu">
+                      <ul>
+                         <li class="navbar__item nav-fade">
+                            <a href="tel:406-555-0120">
+                               <i class="fa-sharp fa-solid fa-phone-volume"></i>
+                               (406) 555-0120
+                            </a>
+                         </li>
+                         <li class="navbar__item nav-fade">
+                            <a href="mailto:info@xpovio.com">
+                               <i class="fa-sharp fa-solid fa-envelope"></i>
+                               info@xpovio.com
+                            </a>
+                         </li>
+                      </ul>
+                   </div>
+                   <div class="navbar__options">
+                      <button class="open-offcanvas-nav d-flex" aria-label="toggle mobile menu" title="open offcanvas menu">
+                         <i class="fa-light fa-bars-staggered"></i>
+                         Menu
+                      </button>
+                      <div class="tertiary-cta d-none d-sm-flex">
+                         <div class="navbar__mobile-options">
+                            <a href="/contact-us" class="btn btn--secondary">Let's Talk</a>
+                         </div>
+                      </div>
+                   </div>
+                </nav>
+             </div>
+          </div>
+       </div>
+    </div>
+  )}
+
+  {variant === "quaternary" && (
+    <div class="primary-navbar quaternary--navbar">
+       <div class="container">
+          <div class="row">
+             <div class="col-12">
+                <nav class="navbar p-0">
+                   <div class="navbar__logo">
+                      <a href="/" aria-label="go to home">
+                         <img src={logo} alt="Xpovio">
+                      </a>
+                   </div>
+                   <div class="navbar__options">
+                      <button class="open-offcanvas-nav d-flex" aria-label="toggle mobile menu" title="open offcanvas menu">
+                         <i class="fa-light fa-bars-staggered"></i>
+                      </button>
+                      <div class="tertiary-cta d-none d-sm-flex">
+                         <div class="navbar__mobile-options">
+                            <a href="/contact-us" class="btn btn--secondary">
+                               Let's Talk
+                               <i class="fa-solid fa-arrow-up-right"></i>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </nav>
+             </div>
+          </div>
+       </div>
+    </div>
+  )}
+
+  {variant === "quinary" && (
+    <div class="primary-navbar quinary--navbar">
+       <div class="container">
+          <div class="row">
+             <div class="col-12">
+                <nav class="navbar p-0">
+                   <div class="navbar__logo">
+                      <a href="/" aria-label="go to home">
+                         <img src={logo} alt="Xpovio">
+                      </a>
+                      <button class="open-offcanvas-nav d-none d-xl-flex" aria-label="toggle mobile menu">
+                         <i class="fa-light fa-bars-staggered"></i>
+                      </button>
+                   </div>
+                   <div class="navbar__menu">
+                      <ul>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Home</a>
+                            <ul class="navbar__sub-menu navbar__sub-menu--lg">
+                               <li><a href="/">Creative Agency</a></li>
+                               <li><a href="/index-light">Creative Agency Light</a></li>
+                               <li><a href="/index-two">Digital Agency</a></li>
+                               <li><a href="/index-two-light">Digital Agency Light</a></li>
+                               <li><a href="/index-three">It Solution</a></li>
+                               <li><a href="/index-three-light">It Solution Light</a></li>
+                               <li><a href="/index-four">Personal Portfolio</a></li>
+                               <li><a href="/index-four-light">Personal Portfolio Light</a></li>
+                               <li><a href="/index-five">Interactive Portfolio</a></li>
+                               <li><a href="/index-five-light">Interactive Portfolio Light</a></li>
+                            </ul>
+                         </li>
+                         <li class="navbar__item nav-fade">
+                            <a href="/about-us">About Us</a>
+                         </li>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Services</a>
+                            <ul class="navbar__sub-menu">
+                               <li><a href="/our-services">Our Services</a></li>
+                               <li><a href="/service-single">Service Details</a></li>
+                            </ul>
+                         </li>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Projects</a>
+                            <ul class="navbar__sub-menu">
+                               <li><a href="/our-projects">Our Projects</a></li>
+                               <li><a href="/project-single">Project Details</a></li>
+                            </ul>
+                         </li>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Pages</a>
+                            <ul class="navbar__sub-menu">
+                               <li><a href="/faq">FAQ</a></li>
+                               <li><a href="/404">Error</a></li>
+                               <li><a href="/our-story">Our Story</a></li>
+                               <li><a href="/portfolio">Portfolio</a></li>
+                               <li class="navbar__item navbar__item--has-children">
+                                  <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
+                                  <ul class="navbar__sub-menu navbar__sub-menu__nested">
+                                     <li><a href="/our-teams">Our Teams</a></li>
+                                     <li><a href="/team-single">Team Details</a></li>
+                                  </ul>
+                               </li>
+                               <li><a href="/client-feedback">Testimonials</a></li>
+                               <li><a href="/contact-us">Contact Us</a></li>
+                            </ul>
+                         </li>
+                         <li class="navbar__item navbar__item--has-children nav-fade">
+                            <a href="javascript:void(0)" aria-label="dropdown menu" class="navbar__dropdown-label">Blog</a>
+                            <ul class="navbar__sub-menu">
+                               <li><a href="/blog">Blog</a></li>
+                               <li><a href="/blog-single">Blog Details</a></li>
+                            </ul>
+                         </li>
+                      </ul>
+                   </div>
+                   <div class="navbar__options">
+                      <div class="navbar__mobile-options d-none d-sm-flex">
+                         <a href="/contact-us" class="btn btn--secondary">Let's Talk</a>
+                      </div>
+                      <button class="open-mobile-menu d-flex d-xl-none" aria-label="toggle mobile menu">
+                         <i class="fa-light fa-bars-staggered"></i>
+                      </button>
+                   </div>
+                </nav>
+             </div>
+          </div>
+       </div>
+       <MobileMenu logo={logo} />
+    </div>
+  )}
+</header>
+<!-- ==== / header end ==== -->

@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  currentPage?: string;
+  parentPage?: string;
+  parentLink?: string;
+  description?: string;
+}
+
+const {
+  title,
+  currentPage = title,
+  parentPage,
+  parentLink,
+  description = "We’re a full-service creative agency that helps businesses build brands, tell stories, and grow through exceptional digital experiences.",
+} = Astro.props;
+---
+<!-- ==== banner start ==== -->
+<section class="cmn-banner bg-img" data-background="/assets/images/banner/cmn-banner-bg.png">
+   <div class="container">
+      <div class="row gaper align-items-center">
+         <div class="col-12 col-lg-5 col-xl-7">
+            <div class="banner__content">
+               <h2 class="title">{title}</h2>
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="breadcrumb-item">
+                        <a href="/">
+                           <i class="fa-solid fa-house"></i>
+                           Home
+                        </a>
+                     </li>
+                     {parentPage && (
+                        <li class="breadcrumb-item">
+                           <a href={parentLink || "javascript:void(0)"}>{parentPage}</a>
+                        </li>
+                     )}
+                     <li class="breadcrumb-item active" aria-current="page">
+                        {currentPage}
+                     </li>
+                  </ol>
+               </nav>
+            </div>
+         </div>
+         <div class="col-12 col-lg-7 col-xl-5 text-start text-lg-end">
+            <p class="primary-text">
+               {description}
+            </p>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- ==== / banner end ==== -->

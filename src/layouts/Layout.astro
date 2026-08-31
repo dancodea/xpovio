@@ -1,0 +1,136 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Preloader from "../components/Preloader.astro";
+import Cursor from "../components/Cursor.astro";
+import Header from "../components/Header.astro";
+import OffcanvasMenu from "../components/OffcanvasMenu.astro";
+import Footer from "../components/Footer.astro";
+import VideoModal from "../components/VideoModal.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  bodyClass?: string;
+  headerVariant?: "secondary" | "cmn" | "tertiary" | "quaternary" | "quinary";
+  headerLogo?: string;
+  footerVariant?: "one" | "two" | "three" | "four" | "cmn";
+  footerLogo?: string;
+  isLight?: boolean;
+  hideHeader?: boolean;
+  hideFooter?: boolean;
+  hideOffcanvas?: boolean;
+  hideVideoModal?: boolean;
+}
+
+const {
+  title = "Xpovio - Digital Agency Creative Portfolio",
+  description = "Creative Agency Portfolio PHP Template",
+  keywords = "creative, agency, portfolio",
+  bodyClass = "",
+  headerVariant = "cmn",
+  headerLogo = bodyClass.includes("light") ? "/assets/images/logo-light.png" : "/assets/images/logo.png",
+  footerVariant = "two",
+  footerLogo = bodyClass.includes("light") ? "/assets/images/logo-light.png" : "/assets/images/logo.png",
+  isLight = bodyClass.includes("light"),
+  hideHeader = false,
+  hideFooter = false,
+  hideOffcanvas = false,
+  hideVideoModal = false,
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- required meta -->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- #favicon -->
+   <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+   <!-- #title -->
+   <title>{title}</title>
+   <!-- #keywords -->
+   <meta name="keywords" content={keywords}>
+   <!-- #description -->
+   <meta name="description" content={description}>
+   
+   <!-- ==== css dependencies start ==== -->
+   <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/assets/vendor/glyyphter/css/xpovio.css">
+   <link rel="stylesheet" href="/assets/vendor/font-awesome/css/all.css">
+   <link rel="stylesheet" href="/assets/vendor/nice-select/css/nice-select.css">
+   <link rel="stylesheet" href="/assets/vendor/magnific-popup/css/magnific-popup.css">
+   <link rel="stylesheet" href="/assets/vendor/slick/css/slick.css">
+   <!-- ==== / css dependencies end ==== -->
+   
+   <!-- main css -->
+   <link rel="stylesheet" href="/assets/css/main.min.css">
+
+   <!-- Astro ClientRouter for smooth page transitions -->
+   <ClientRouter />
+</head>
+
+<body class={bodyClass}>
+   <div class="my-app">
+      <!-- Preloader Start -->
+      <Preloader />
+      <!-- Cursor Area Start -->
+      <Cursor />
+
+      <!-- Header Start -->
+      {!hideHeader && <Header variant={headerVariant} logo={headerLogo} />}
+      
+      <!-- Offcanvas Menu Start -->
+      {!hideOffcanvas && <OffcanvasMenu logo={headerLogo} />}
+
+      <!-- Smooth Content Wrapper for GSAP SmoothScroll Start -->
+      <div id="smooth-wrapper">
+         <div id="smooth-content">
+            <main>
+               <slot />
+            </main>
+
+            <!-- Footer Start -->
+            {!hideFooter && <Footer variant={footerVariant} logo={footerLogo} isLight={isLight} />}
+         </div>
+      </div>
+      <!-- / Smooth Content Wrapper End -->
+
+      <!-- Background vertical decorative lines -->
+      <div class="line">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+
+      <!-- Video Modal -->
+      {!hideVideoModal && <VideoModal />}
+   </div>
+
+   <!-- Scroll to Top -->
+   <ScrollToTop />
+
+   <!-- Scripts dependencies (loaded once and preserved) -->
+   <script is:inline src="/assets/vendor/jquery/jquery-3.7.0.min.js"></script>
+   <script is:inline src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script is:inline src="/assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+   <script is:inline src="/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+   <script is:inline src="/assets/vendor/slick/js/slick.min.js"></script>
+   <script is:inline src="/assets/vendor/images-loaded/imagesloaded.pkgd.min.js"></script>
+   <script is:inline src="/assets/vendor/isotope/isotope.pkgd.min.js"></script>
+   <script is:inline src="/assets/vendor/gsap/chroma.min.js"></script>
+   <script is:inline src="/assets/vendor/gsap/SplitText.min.js"></script>
+   <script is:inline src="/assets/vendor/gsap/ScrollSmoother.min.js"></script>
+   <script is:inline src="/assets/vendor/gsap/ScrollToPlugin.min.js"></script>
+   <script is:inline src="/assets/vendor/gsap/ScrollTrigger.min.js"></script>
+   <script is:inline src="/assets/vendor/gsap/gsap.min.js"></script>
+   <script is:inline src="/assets/vendor/vanilla-tilt/tilt.jquery.js"></script>
+   
+   <!-- Astro interactive lifecycle initialization script -->
+   <script is:inline src="/assets/js/app-init.js"></script>
+</body>
+</html>

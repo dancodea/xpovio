@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "FAQ - Xpovio";
+---
+
+<Layout
+  title={title}
+  headerVariant="cmn"
+  footerVariant="two"
+  bodyClass=""
+>
+<!--<< Breadcrumb Section Start >>-->
+                              
+<!-- ==== banner start ==== -->
+<section class="cmn-banner bg-img" style="background-image: url('assets/images/banner/cmn-banner-bg.png');">
+    <div class="container">
+        <div class="row gaper align-items-center">
+        <div class="col-12 col-lg-5 col-xl-7">
+            <div class="text-center text-lg-start">
+                <h2 class="title title-anim"><div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">F</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">A</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">Q</div></div></h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/">
+                            <i class="fa-solid fa-house"></i>
+                            Home                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                       FAQ                    </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- ==== / banner end ==== -->              
+               <!-- ==== faq start ==== -->
+               <section class="section faq fade-wrapper">
+                  <div class="container">
+                     <div class="row gaper">
+                        <div class="col-12 col-lg-6">
+                           <div class="faq__thumb fade-left" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                              <img src="/assets/images/faq-thumb.png" alt="Image">
+                           </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                           <div class="accordion" id="accordion">
+                              <div class="accordion-item fade-top faq-one-active" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                 <h5 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                       I'm a total beginner. Can I still follow along?
+                                    </button>
+                                 </h5>
+                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                       <p>
+                                          We have facility to produce advance work various industrial applications based
+                                          on specially developed technol-ogy. We are also ready to developement by
+                                          according to users changing needs. Infrastructure.
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="accordion-item fade-top" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                 <h5 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                       Will you be updating the program?
+                                    </button>
+                                 </h5>
+                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                       <p>
+                                          We have facility to produce advance work various industrial applications based
+                                          on specially developed technol-ogy. We are also ready to developement by
+                                          according to users changing needs. Infrastructure.
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="accordion-item content__space fade-top" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                 <h5 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                       Can I get an invoice for my purchase?
+                                    </button>
+                                 </h5>
+                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                       <p>
+                                          We have facility to produce advance work various industrial applications based
+                                          on specially developed technol-ogy. We are also ready to developement by
+                                          according to users changing needs. Infrastructure.
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="accordion-item content__space fade-top" style="translate: none; rotate: none; scale: none; transform: translate(0px, 100px) scale(0.8, 0.8); opacity: 0;">
+                                 <h5 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                       What is global search engine optimization?
+                                    </button>
+                                 </h5>
+                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                       <p>
+                                          We have facility to produce advance work various industrial applications based
+                                          on specially developed technol-ogy. We are also ready to developement by
+                                          according to users changing needs. Infrastructure.
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+               <!-- ==== / faq end ==== -->
+</Layout>
