@@ -6,8 +6,17 @@
 (function () {
   let bannerThreeTick = null;
   let cursorInitialized = false;
+  let splitInstances = [];
 
   function cleanupApp() {
+    // Revert all SplitText instances to clean original HTML
+    splitInstances.forEach((s) => {
+      try {
+        s.revert();
+      } catch (e) {}
+    });
+    splitInstances = [];
+
     // Clear banner three timer
     if (bannerThreeTick) {
       clearInterval(bannerThreeTick);
@@ -782,7 +791,12 @@
       if (device_width > 576 && window.SplitText) {
         const titles = gsap.utils.toArray(".title-anim");
         titles.forEach((item) => {
-          const split = new SplitText(item, { type: "chars, words", lineThreshold: 0.5 });
+          const split = new SplitText(item, {
+            type: "chars, words",
+            wordsClass: "split-word",
+            lineThreshold: 0.5,
+          });
+          splitInstances.push(split);
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: item,
